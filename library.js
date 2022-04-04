@@ -1,5 +1,15 @@
 
-let myLib = []
+let item = document.querySelector(".item-card").innerText
+
+
+const book1 = {
+    Author : "Mr.Me",
+    Title : "GOT",
+    Pages : 300,
+    Read : true,
+}
+
+let myLib = [book1]
 
 function Book(author, title, numberOfPages, read) {
     this.author = author
