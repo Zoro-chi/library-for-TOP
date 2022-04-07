@@ -21,10 +21,12 @@ header h1{
 #display{
     border: 2px solid black;
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(4, auto);
+
 
 }
 #display > *{
     padding: .8rem;
     border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
