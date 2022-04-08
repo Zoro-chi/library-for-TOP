@@ -19,14 +19,18 @@ header h1{
     margin-bottom: 2rem;
 }
 #display{
-    border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(4, auto);
-
-
+    font-size: 1.2rem;
+    font-family: monospace;
 }
 #display > *{
     padding: .8rem;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
+    display: flex;
+    justify-content: center;
+}
+#form{
+    display: none;
 }
