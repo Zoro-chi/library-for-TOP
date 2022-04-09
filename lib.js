@@ -4,7 +4,7 @@ const addToLib = document.querySelector(".add-button")
 const addNewBook = document.querySelector(".new-book")
 let container = document.querySelector("#display")
 
-
+let storedBooks = []
 let myLib = []
 
 function Book(author, title, pages, read) {
@@ -26,15 +26,16 @@ function add() {
     console.log(myLib.length)
     for (book of myLib){
     for (let prop in book){
-        // if (Object.prototype.hasOwnProperty.call(book, prop)){
+        if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
-            item.classList.add(book[prop])
+            // item.classList.add(book[prop])
             item.innerHTML = book[prop]
             container.appendChild(item)
         }
     }
+    } storedBooks.push(myLib.pop())
+    return storedBooks
 }
-// }
 
 addNewBook.addEventListener("click", newbook)
 function newbook() {
