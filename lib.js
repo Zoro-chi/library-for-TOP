@@ -25,6 +25,7 @@ function add() {
     form.reset()
     console.log(myLib.length)
     for (book of myLib){
+        let delBtn = document.createElement("button")
     for (let prop in book){
         if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
@@ -33,9 +34,11 @@ function add() {
                 item.innerHTML = book[prop]
                 container.appendChild(item)
             }
-        }
-    }
-    } storedBooks.push(myLib.pop())
+            
+        }   
+    }   container.appendChild(delBtn)
+    } 
+    storedBooks.push(myLib.pop())
     return storedBooks
 }
 

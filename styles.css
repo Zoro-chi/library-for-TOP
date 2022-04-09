@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway:wght@300;400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Solway" , monospace ,sans-serif;
 }
 header.header{
     height: 12.5vh;
     width: 100vw;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 header h1{
-    font-size: 7rem;
+    font-size: 5rem;
 }
 .main{
     display: flex;
@@ -21,7 +24,7 @@ header h1{
 }
 #display{
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     font-size: 1.2rem;
     font-family: monospace;
     border-top: 1px solid black;
