@@ -29,8 +29,10 @@ function add() {
         if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
             // item.classList.add(book[prop])
-            item.innerHTML = book[prop]
-            container.appendChild(item)
+            if (author !== "" && title !== "" && pages !== ""){
+                item.innerHTML = book[prop]
+                container.appendChild(item)
+            }
         }
     }
     } storedBooks.push(myLib.pop())
