@@ -15,7 +15,13 @@ function Book(author, title, pages, read) {
     this.read = read
 }
 
+
+function dlt() {
+    myLib.pop()
+}
+
 addToLib.addEventListener("click", add)
+
 function add() {
     let author = document.querySelector("#author").value
     let title = document.querySelector("#title").value
@@ -25,14 +31,15 @@ function add() {
     myLib.push(newBook)
     form.reset()
     
-    for (book of myLib){
+    for (let book of myLib){
+        let i = myLib.indexOf(book)
         let delBtn = document.createElement("button")
-        delBtn.addEventListener("click", () => {
-            myLib.pop()
-        })
-    console.log(myLib.length)
+        delBtn.addEventListener("click", dlt)
+        let bookObj = document.createElement("div")
+        bookObj.setAttribute("data-position", i)
+        console.log(bookObj)
     for (let prop in book){
-        if (Object.prototype.hasOwnProperty.call(book, prop)){
+        // if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
         
     if (author !== "" && title !== "" && pages !== ""){
@@ -43,9 +50,9 @@ function add() {
         }   
     }     
     } 
-    storedBooks.push(myLib.pop())
-    return storedBooks
-}
+    // storedBooks.push(myLib.pop())
+    // return storedBooks
+// }
 
 addNewBook.addEventListener("click", newbook)
 function newbook() {
