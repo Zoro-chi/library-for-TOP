@@ -32,11 +32,12 @@ function add() {
     form.reset()
     
     for (let book of myLib){
-        let i = myLib.indexOf(book)
+        let i = 0
         let delBtn = document.createElement("button")
         delBtn.addEventListener("click", dlt)
         let bookObj = document.createElement("div")
         bookObj.setAttribute("data-position", i)
+        i++
         console.log(bookObj)
     for (let prop in book){
         // if (Object.prototype.hasOwnProperty.call(book, prop)){
@@ -49,13 +50,12 @@ function add() {
         container.appendChild(delBtn)
         }   
     }     
-    } 
-    // storedBooks.push(myLib.pop())
-    // return storedBooks
-// }
+    storedBooks.push(myLib.pop())
+    return storedBooks
+}
+
 
 addNewBook.addEventListener("click", newbook)
 function newbook() {
     document.querySelector("#form").style.display = "block"
 }
-
