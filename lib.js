@@ -38,10 +38,9 @@ function add() {
             item.innerHTML = book[prop]
             container.appendChild(item)
         }
-            
+        container.appendChild(delBtn)
         }   
-    }  
-         container.appendChild(delBtn)
+    }     
     } 
     storedBooks.push(myLib.pop())
     return storedBooks
