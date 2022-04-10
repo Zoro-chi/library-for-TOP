@@ -30,6 +30,7 @@ function add() {
         delBtn.addEventListener("click", () => {
             myLib.pop()
         })
+    console.log(myLib.length)
     for (let prop in book){
         if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
