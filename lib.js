@@ -24,7 +24,10 @@ function add() {
     myLib.push(newBook)
     form.reset()
     console.log(myLib.length)
-    for (book of myLib){
+    for (let book of myLib){
+        let i = myLib.indexOf(book)
+        book.setAttribute("data-pos", i)
+        console.log(book)
     for (let prop in book){
         if (Object.prototype.hasOwnProperty.call(book, prop)){
             let item = document.createElement("div")
