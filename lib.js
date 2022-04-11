@@ -5,8 +5,9 @@ const addNewBook = document.querySelector(".new-book")
 let container = document.querySelector("#display")
 
 
-let storedBooks = []
+let storedBooks;
 let myLib = []
+
 
 function Book(author, title, pages, read) {
     this.author = author
@@ -16,9 +17,7 @@ function Book(author, title, pages, read) {
 }
 
 
-function dlt() {
-    myLib.pop()
-}
+
 
 addToLib.addEventListener("click", add)
 
@@ -29,15 +28,15 @@ function add() {
     let read = document.querySelector("#read").value
     let newBook = new Book(author, title, pages, read)
     myLib.push(newBook)
+    storedBooks = myLib.slice(-1)
     form.reset()
     
-    for (let book of myLib){
-        let i = 0
+    for (let book of storedBooks){
+        let i = myLib.indexOf(book)
         let delBtn = document.createElement("button")
         delBtn.addEventListener("click", dlt)
         let bookObj = document.createElement("div")
         bookObj.setAttribute("data-position", i)
-        i++
         console.log(bookObj)
     for (let prop in book){
         // if (Object.prototype.hasOwnProperty.call(book, prop)){
@@ -45,15 +44,18 @@ function add() {
         
     if (author !== "" && title !== "" && pages !== ""){
             item.innerHTML = book[prop]
+            bookObj.appendChild(item)
             container.appendChild(item)
         }
         container.appendChild(delBtn)
         }   
     }     
-    storedBooks.push(myLib.pop())
-    return storedBooks
 }
 
+function dlt(e) {
+    let a = e.target
+    container.removeChild()
+}
 
 addNewBook.addEventListener("click", newbook)
 function newbook() {
