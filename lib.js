@@ -33,10 +33,13 @@ function add() {
     
     for (let book of storedBooks){
         let i = myLib.indexOf(book)
-        let delBtn = document.createElement("button")
-        delBtn.addEventListener("click", dlt)
         let bookObj = document.createElement("div")
         bookObj.setAttribute("data-position", i)
+        let delBtn = document.createElement("button")
+        delBtn.addEventListener("click", () =>{
+            bookObj.remove()
+        })
+
         console.log(bookObj)
     for (let prop in book){
         // if (Object.prototype.hasOwnProperty.call(book, prop)){
@@ -47,15 +50,12 @@ function add() {
             bookObj.appendChild(item)
             container.appendChild(item)
         }
+        bookObj.appendChild(delBtn)
         container.appendChild(delBtn)
         }   
     }     
 }
 
-function dlt(e) {
-    let a = e.target
-    container.removeChild()
-}
 
 addNewBook.addEventListener("click", newbook)
 function newbook() {
